@@ -1,11 +1,16 @@
 import React from "react";
 
 const DropDown = () => {
+
+const handleChange=()=>{
+  console.log('this is handle cahange ');
+}
+
   return (
     <div>
-      <div class="relative inline-flex py-1">
+      <div className="relative inline-flex py-1">
         <svg
-          class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+          className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 412 232"
         >
@@ -15,7 +20,7 @@ const DropDown = () => {
             fill-rule="nonzero"
           />
         </svg>
-        <select class="  rounded text-white h-10 pl-5 pr-10 bg-neutral-800 hover:bg-gray-800 focus:outline-none appearance-none">
+        <select onChange={handleChange}  className="  rounded text-white h-10 pl-5 pr-10 bg-neutral-800 hover:bg-gray-800 focus:outline-none appearance-none">
           <option>Choose a color</option>
           <option>Red</option>
           <option>Blue</option>

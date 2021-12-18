@@ -2,9 +2,12 @@ import "./App.css";
 import ProductCollection from "./Component/ProductCollection";
 import SideBar from "./Component/SideBar";
 
+
 function App() {
   return (
     <div className="App bg-neutral-800">
+
+   
       <div
         className=" 
        fixed left-0 pt-12"

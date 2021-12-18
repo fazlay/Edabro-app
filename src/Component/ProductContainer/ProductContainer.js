@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../Slider/Slider";
-import SingleCard from "./SingleCard";
+
 
 const ProductContainer = () => {
   const [products, SetProducts] = useState([]);

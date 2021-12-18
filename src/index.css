@@ -21,3 +21,6 @@ code {
 .mySwiper{
 height: 170px;
 }
+.swiper-button-prev::after{
+  display: none;
+}

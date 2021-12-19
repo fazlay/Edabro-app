@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleCard = ({ product }) => {
-  const { product_name, brand_name, discription, price } = product;
+  const { time,address,product_name, brand_name, discription, price } = product;
   //  (product);
   return (
     <div className=" bg-neutral-800 w-72 p-4 rounded-lg">
@@ -17,9 +17,10 @@ const SingleCard = ({ product }) => {
           <h1 className="text-white"> $ {price}</h1>
         </div>
       </div>
-      <div className="flex justify-between">
-        <h1 className="text-neutral-400">Location</h1>{" "}
-        <h1 className="text-neutral-400">Date: 21/12/2021</h1>
+      <div className=" ">
+        <h1 className="text-neutral-400">State :{address?.state}</h1>{" "}
+        <h1 className="text-neutral-400">City :{address?.city}</h1>{" "}
+        <h1 className="text-neutral-400">Date: {time.slice(0,10)}</h1>
       </div>
       <h1 className="text-neutral-400">Description: {discription}</h1>
     </div>

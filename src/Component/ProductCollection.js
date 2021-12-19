@@ -12,6 +12,7 @@ const ProductCollection = ({ products, setProducts, ...rest }) => {
 
       <div>
         <ProductContainer
+        
           products={products}
           setProducts={setProducts}
         ></ProductContainer>

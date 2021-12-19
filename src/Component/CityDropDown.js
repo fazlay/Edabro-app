@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-const ProductDropDown = ({ products, setProducts }) => {
-  const [uniqueProductsName, setUniqueProductsName] = useState("");
-  // console.log(products);
+const CityDropDown = ({ products, setProducts }) => {
+  const [uniqueCityName, setuniqueCityName] = useState("");
+ 
 
   //---------------------------------------------------------------------------Drop Down event Handler
   const handleChange = (e) => {
     // console.log(e.target.value);
     const result = products.filter(
-      (product) => product.product_name === e.target.value
+      (product) => product?.address?.city === e.target.value
     );
     console.log(result);
     setProducts(result);
@@ -17,14 +17,13 @@ const ProductDropDown = ({ products, setProducts }) => {
 
   //---------------------------------------------------------------------------Drop Down Genarator
   let productsName = [];
-  products.map((name) => productsName.push(name.product_name));
+  products.map((name) => productsName.push(name.address?.city));
   const newProducts = [...new Set(productsName)];
   useEffect(() => {
-    setUniqueProductsName(newProducts);
-    console.log('controle  called');
+    setuniqueCityName(newProducts);
   }, []);
 
-  // setUniqueProductsName(newProducts);
+  // setuniqueCityName(newProducts);
   // console.log(newProducts);
   return (
     <div>
@@ -42,14 +41,14 @@ const ProductDropDown = ({ products, setProducts }) => {
         </svg>
         <select
           onChange={handleChange}
-          className=" rounded text-white h-10 pl-5 pr-10 bg-neutral-800 hover:bg-gray-800 focus:outline-none appearance-none"
+          className="rounded text-white h-10 pl-5 pr-10 bg-neutral-800 hover:bg-gray-800 focus:outline-none appearance-none"
         >
-          {uniqueProductsName &&
-            uniqueProductsName.map((product) => <option>{product}</option>)}
+          {uniqueCityName &&
+            uniqueCityName.map((product) => <option>{product}</option>)}
         </select>
       </div>
     </div>
   );
 };
 
-export default ProductDropDown;
+export default CityDropDown;

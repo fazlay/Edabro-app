@@ -25,7 +25,7 @@ export default ({ products, data }) => {
   return (
     <Swiper
       slidesPerView={4}
-      spaceBetween={300}
+      spaceBetween={210}
       slidesPerGroup={1}
       loop={true}
       loopFillGroupWithBlank={true}

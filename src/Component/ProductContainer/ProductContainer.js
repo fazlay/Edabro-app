@@ -1,17 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../Slider/Slider";
 
-const ProductContainer = ({ products, setProducts, ...rest }) => {
+
+const ProductContainer = ({
+ 
+  products,
+  setProducts,
+  ...rest
+}) => {
+  const [control, setControl] = useState(false);
+  const [isDataReady, setIsDataReady] = useState(false);
+
   useEffect(() => {
+    setIsDataReady(false);
     fetch("https://assessment-edvora.herokuapp.com/")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => {
+        if (data.length < 1) {
+          setControl(() => !control);
+        } else {
+          setProducts(data);
+          setIsDataReady(true);
+        }
+      });
+  }, [control]);
+
   let brands = [];
   //[brands].push(brands.brand_name)
   products.map((brand) => brands.push(brand.brand_name));
   const uniqueBrands = [...new Set(brands)];
   // console.log(uniqueBrands);
+
+  if (!isDataReady) {
+    return <p>Loading....</p>;
+  }
 
   return (
     <>

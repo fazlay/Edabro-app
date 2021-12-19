@@ -19,7 +19,7 @@ code {
   border-bottom: 2px solid rgb(82 82 82);
 }
 .mySwiper{
-height: 170px;
+height: 190px;
 }
 .swiper-button-prev::after{
   display: none;

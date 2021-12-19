@@ -21,7 +21,7 @@ const ProductContainer = ({ products, setProducts, ...rest }) => {
             {data}
           </div>
           <div className="bg-neutral-900  flex rounded-xl py-4 mt-2  pl-4 content-center  ">
-            <Slider products={products}></Slider>
+            <Slider data={data} products={products}></Slider>
           </div>
         </div>
       ))}

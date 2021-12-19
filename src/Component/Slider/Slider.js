@@ -17,8 +17,11 @@ SwiperCore.use([Pagination, Navigation]);
 
 // -------------------------------
 
-export default ({ products }) => {
+export default ({ products, data }) => {
   // console.log(products);
+
+  const showProduct = products.filter((product) => product.brand_name === data);
+  console.log(showProduct);
   return (
     <Swiper
       slidesPerView={4}
@@ -33,8 +36,8 @@ export default ({ products }) => {
       {/* {products.map((product) => (
               <SingleCard key={product.time} product={product}></SingleCard>
             ))} */}
-      {products &&
-        products.map((product) => (
+      {showProduct &&
+        showProduct.map((product) => (
           <SwiperSlide key={Math.random()}>
             <SingleCard product={product}></SingleCard>
           </SwiperSlide>

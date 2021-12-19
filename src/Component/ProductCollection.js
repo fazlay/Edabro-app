@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import ProductContainer from "./ProductContainer/ProductContainer";
 
-const ProductCollection = () => {
+const ProductCollection = ({ products, setProducts, ...rest }) => {
   return (
     <div className="leftMargin pl-4 h-full ">
       <h1 className=" text-3xl font-semibold text-white text-left">Edovara</h1>
@@ -10,9 +10,11 @@ const ProductCollection = () => {
         Products
       </h1>
 
-    
       <div>
-        <ProductContainer></ProductContainer>
+        <ProductContainer
+          products={products}
+          setProducts={setProducts}
+        ></ProductContainer>
       </div>
     </div>
   );

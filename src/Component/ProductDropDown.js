@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-const ProductDropDown = ({ products, setProducts }) => {
+const ProductDropDown = ({ productsExtra, products, setProducts }) => {
   const [uniqueProductsName, setUniqueProductsName] = useState("");
   // console.log(products);
 
   //---------------------------------------------------------------------------Drop Down event Handler
   const handleChange = (e) => {
     // console.log(e.target.value);
-    const result = products.filter(
+    const result = productsExtra.filter(
       (product) => product.product_name === e.target.value
     );
     console.log(result);
@@ -21,7 +21,6 @@ const ProductDropDown = ({ products, setProducts }) => {
   const newProducts = [...new Set(productsName)];
   useEffect(() => {
     setUniqueProductsName(newProducts);
-    console.log('controle  called');
   }, []);
 
   // setUniqueProductsName(newProducts);

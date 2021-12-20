@@ -5,7 +5,8 @@ import SideBar from "./Component/SideBar";
 
 function App() {
   const [products, setProducts] = useState([]);
- 
+  const [productsExtra, setProductsExtra] = useState([]);
+
   return (
     <div className="App bg-neutral-800">
       <div
@@ -14,9 +15,9 @@ function App() {
       >
         {products && products.length > 0 ? (
           <SideBar
-          
             products={products}
             setProducts={setProducts}
+            productsExtra={productsExtra}
           ></SideBar>
         ) : (
           <h2 className="text-white center"> Loading... </h2>
@@ -25,7 +26,8 @@ function App() {
 
       <div className="pt-12">
         <ProductCollection
-         
+          productsExtra={productsExtra}
+          setProductsExtra={setProductsExtra}
           products={products}
           setProducts={setProducts}
         ></ProductCollection>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../Slider/Slider";
 
-
 const ProductContainer = ({
- 
+  productsExtra,
+  setProductsExtra,
   products,
   setProducts,
   ...rest
@@ -20,6 +20,7 @@ const ProductContainer = ({
           setControl(() => !control);
         } else {
           setProducts(data);
+          setProductsExtra(data);
           setIsDataReady(true);
         }
       });

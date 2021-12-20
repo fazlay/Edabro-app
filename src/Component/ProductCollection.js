@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import "../App.css";
 import ProductContainer from "./ProductContainer/ProductContainer";
 
-const ProductCollection = ({ products, setProducts, ...rest }) => {
+const ProductCollection = ({
+  productsExtra,
+  setProductsExtra,
+  products,
+  setProducts,
+  ...rest
+}) => {
   return (
     <div className="leftMargin pl-4 h-full ">
       <h1 className=" text-3xl font-semibold text-white text-left">Edovara</h1>
@@ -12,7 +18,8 @@ const ProductCollection = ({ products, setProducts, ...rest }) => {
 
       <div>
         <ProductContainer
-        
+          productsExtra={productsExtra}
+          setProductsExtra={setProductsExtra}
           products={products}
           setProducts={setProducts}
         ></ProductContainer>

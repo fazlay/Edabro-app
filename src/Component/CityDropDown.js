@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const CityDropDown = ({ products, setProducts }) => {
+const CityDropDown = ({ productsExtra, products, setProducts }) => {
   const [uniqueCityName, setuniqueCityName] = useState("");
- 
 
   //---------------------------------------------------------------------------Drop Down event Handler
   const handleChange = (e) => {
     // console.log(e.target.value);
-    const result = products.filter(
+    const result = productsExtra.filter(
       (product) => product?.address?.city === e.target.value
     );
     console.log(result);
